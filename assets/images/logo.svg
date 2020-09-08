@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63.358" height="63.358" viewBox="0 0 63.358 63.358">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="63.358" height="63.358" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00ff89"/>
+      <stop offset="1" stop-color="#00a7ff"/>
+    </linearGradient>
+  </defs>
+  <g id="Logo" clip-path="url(#clip-path)">
+    <circle id="Ellipse_1" data-name="Ellipse 1" cx="31.679" cy="31.679" r="31.679" fill="url(#linear-gradient)"/>
+    <path id="Union_8" data-name="Union 8" d="M2.365,28.06l-.15.31S-5.266,10.649,7.267,1.49c6.212-4.54,5.025,2.026,2.247,9.8a16.653,16.653,0,0,1,9.552-4.9c8.694-1.365,2.128,5.831-5.143,12.285,4.25-1.052,9.532-.256,15.645,4.841,7.137,5.951,3.289,7.664-3.506,7.664C17.408,31.178,3.974,28.4,2.365,28.06Z" transform="translate(13.354 16.854) rotate(-9)" fill="#fff"/>
+  </g>
+</svg>
