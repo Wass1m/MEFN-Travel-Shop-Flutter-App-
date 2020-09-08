@@ -172,7 +172,7 @@ class _ProductItemState extends State<ProductItem> {
             color: Colors.lightBlueAccent,
             image: DecorationImage(
                 image: NetworkImage(
-                  'http://192.168.1.109:5000/${widget.product.images[0]}',
+                  'http://192.168.1.110:5000/${widget.product.images[0]}',
                 ),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
@@ -257,12 +257,28 @@ class PopularItem extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('European tour'),
-                    Text('14 april -  25 april')
+                    Text(
+                      'European tour',
+                      style: kcategoryStyle,
+                    ),
+                    Text(
+                      '14 april -  25 april',
+                      style: kNumberCategory,
+                    )
                   ],
                 ),
-              )
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    '300\$',
+                    style: kcategoryStyle,
+                  )
+                ],
+              ),
             ],
           ),
         ),

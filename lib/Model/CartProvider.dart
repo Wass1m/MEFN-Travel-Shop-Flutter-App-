@@ -9,6 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class CartProvider extends ChangeNotifier {
   List<Product> _products = List<Product>();
+
   bool loading = false;
 
   save(String key, value) async {
@@ -36,17 +37,17 @@ class CartProvider extends ChangeNotifier {
     prefs.remove(key);
   }
 
-  loadSharedPrefs() async {
-    try {
-      List<String> productsItem = await readList("cart");
-      _products = productsItem
-          .map((product) => Product.fromJson(json.decode(product)))
-          .toList();
+  void loadSharedPrefs() async {
+    List<String> productsItem = await readList("cart");
+    List<Product> productsTemp = productsItem
+        .map((product) => Product.fromJson(json.decode(product)))
+        .toList();
 
-      print(_products);
-    } catch (e) {
-      print(e);
-    }
+    setProducts(productsTemp);
+    print('yaw');
+    print(_products);
+    print(itemsNumber());
+    print('yaw');
   }
 
   void addCartItem(Product item) {
@@ -63,6 +64,10 @@ class CartProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  Product getProduct(id) {
+    return _products[id];
+  }
+
   void reset() {
     _products = [];
     List<String> empty = List<String>();
@@ -72,6 +77,15 @@ class CartProvider extends ChangeNotifier {
 
   int itemsNumber() {
     return _products.length;
+  }
+
+  int totalPrice() {
+    return _products.fold(
+        0, (previousValue, element) => previousValue + element.price);
+  }
+
+  void removeProduct(id) {
+    setProducts(_products.where((product) => product.title != id).toList());
   }
 
   void setProducts(value) {

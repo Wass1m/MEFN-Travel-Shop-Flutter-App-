@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 
 class NetworkHandler extends ChangeNotifier {
-  String baseurl = 'http://192.168.1.109:5000';
+  String baseurl = 'http://192.168.1.110:5000';
   String errorMessage;
   bool loading = false;
   bool validate = false;

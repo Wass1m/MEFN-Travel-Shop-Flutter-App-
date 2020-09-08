@@ -17,7 +17,7 @@ class ProductPage extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  'http://192.168.1.109:5000/${product.images[0]}',
+                  'http://192.168.1.110:5000/${product.images[0]}',
                 ),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
@@ -125,6 +125,7 @@ class ProductPage extends StatelessWidget {
                           print(product);
                           Provider.of<CartProvider>(context, listen: false)
                               .addCartItem(product);
+                          Navigator.pop(context);
                         },
                         child: Container(
                           height: 70,

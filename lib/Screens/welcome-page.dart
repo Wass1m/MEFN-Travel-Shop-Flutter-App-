@@ -23,7 +23,7 @@ class _WelcomePageState extends State<WelcomePage> {
     // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Provider.of<CartProvider>(context).loadSharedPrefs();
+      Provider.of<CartProvider>(context, listen: false).loadSharedPrefs();
     });
   }
 
